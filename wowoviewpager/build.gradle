@@ -8,12 +8,12 @@ ext {
     libraryName = 'wowoviewpager'
     artifact = 'wowoviewpager'
 
-    libraryDescription = 'Optimized for scrolling app intros or making your CV app.'
+    libraryDescription = 'Optimized for scrolling application guide pages.'
 
     siteUrl = 'https://github.com/Nightonke/WoWoViewPager'
     gitUrl = 'https://github.com/Nightonke/WoWoViewPager.git'
 
-    libraryVersion = '1.0.2'
+    libraryVersion = '2.0.0'
 
     developerId = 'nightonke'
     developerName = 'Weiping Huang'
@@ -24,15 +24,21 @@ ext {
     allLicenses = ["Apache-2.0"]
 }
 
+tasks.withType(Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+}
+
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 23
-        versionCode 1
-        versionName "1.0.2"
+        minSdkVersion 11
+        targetSdkVersion 25
+        versionCode 2000
+        versionName "2.0.0"
     }
     buildTypes {
         release {
@@ -45,7 +51,7 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:support-v4:23.2.0'
+    compile 'com.android.support:support-v4:25.3.0'
 }
 
 apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
